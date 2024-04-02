@@ -1,456 +1,785 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-  <head>
-    <meta http-equiv="content-type" content="text/html; charset=UTF-8"></meta>
-    <title>Surrey Concurrency Workshop and S-REPLS 12</title>
-    <link href="index_files/bootstrap.min.css" rel="stylesheet"> </link>
-    <link href="index_files/style.css" rel="stylesheet"> </link>
-    <link href="https://fonts.googleapis.com/css?family=Cabin" rel="stylesheet"></link>
-    <script src="index_files/jquery.js"></script> 
-    <script src="index_files/bootstrap.min.js"></script>
-  </head>
-  <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
-	      aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-	<span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-	<div class="navbar-nav">
-	  <a class="nav-link" href="#venue">Venue</a>
-	  <a class="nav-link" href="#register">Register</a>
-	  <a class="nav-link" href="#schedule">Schedule</a>
-	  <a class="nav-link" href="#announcements">Announcements</a>
-	  <a class="nav-link" href="#organisation">Organisation</a>
-	  <a class="nav-link" href="#previous">Previous Events</a>
-	  <a class="nav-link" href="#accommodation">Accommodation</a>
-	</div>
-      </div>
-    </nav> 
-	  
-    <div class="jumbotron">
-      <h1 class="display-4">Surrey Concurrency Workshop and S-REPLS 12</h1>
-      <div class="lead pt-1"><h2>University of Surrey, Guildford </h2></div>
-      <div class="lead"><h3>23‐24 July, 2019</h3></div>
-      <div class="mt-2"></div>	
-      <p>This two-day workshop is aimed at bringing together researchers,
-	from the UK and elsewhere, who are working on the theory of concurrency and the semantics and implementation of programming languages. </p>
-      
-      <p><a class="anchor" name="venue"></a>
-	The workshop will be held in
-	<strong>Lecture Theatre L of the LT building</strong>
-	(see Campus Map). Directions to the Stag Hill Campus are available
-	<a href="https://www.surrey.ac.uk/visit-university/how-get-here">here</a>.
-      </p>
-      
-      <p> Registration for the event is free. Lunch and tea/coffee will be provided  thanks to funding from
-	<a href="https://vetss.org.uk/">VeTSS</a>
-	and
-	<a href="https://www.surrey.ac.uk/cs/research/projects/academic_centre_of_excellence_in_cyber_security_research_university_of_surrey.htm">the University of Surrey ACE</a>.  </p>
-      
-      
-      <div class="pt-2">
-	<a class="btn btn-warning" href="campusmap.pdf">Campus Map</a>
-	<!-- <a class="anchor" name="register"><a class="btn btn-success" href="" role="button">Register</a></a> -->
-	<!---<a class="anchor" name="propose"><a class="btn btn-danger" href="mailto:b.dongol@surrey.ac.uk ?subject=Talk for concurrency workshop/S-REPLS" role="button">Propose talk</a></a>--->
-	<a class="anchor" name="register"><a class="btn btn-success" href="https://docs.google.com/forms/d/1ilmt5ECd2IDWdpKnX8NRuRy9xwE_ZeuixkRJ7Dg1lLs" role="button">Register</a></a> <div class="col-xs-12" style="height:20px;"></div> <strong>Registration deadline: 15th July.</strong> <br>
-      </div> 
-      
+  <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+    <head>
+      <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    </meta>
+    <title>Kent Concurrency Workshop and S-REPLS 15</title>
+    <link href="index_files/bootstrap.min.css" rel="stylesheet">
+  </link>
+  <link href="index_files/style.css" rel="stylesheet">
+</link>
+<link href="https://fonts.googleapis.com/css?family=Cabin" rel="stylesheet">
+</link>
+<script src="index_files/jquery.js">
+</script>
+  <script src="index_files/bootstrap.min.js">
+</script>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" 	      aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon">
+    </span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-link" href="#venue">
+        Venue
+      </a>
+      <a class="nav-link" href="#register">
+        Register
+      </a>
+      <a class="nav-link" href="#schedule">
+        Schedule
+      </a>
+      <a class="nav-link" href="#announcements">
+        Announcements
+      </a>
+      <a class="nav-link" href="#organisation">
+        Organisation
+      </a>
+      <a class="nav-link" href="#previous">
+        Previous Events
+      </a>
+      <a class="nav-link" href="#accommodation">
+        Accommodation
+      </a>
     </div>
-    
-    <div class="container-fluid"> 
-      <div class="row">
-	<div class="col-sm-6 pt-3">
-	      
-	      
-	      <div class="container-fluid">
-		
-		<h4><alert>Schedule</alert></h4>
-		
-		<hr />
-		
-		<div class="agenda">
-		  <div class="table-responsive">
-		    <table class="table table-condensed table-bordered">
-                      <thead>
-			<tr>
-                          <th>Date</th>
-                          <th>Time</th>
-                          <th>Event</th>
-			</tr>
-                      </thead>
-                      <tbody>
-			<tr>
-			  <td class="agenda-date" class="active" rowspan="9">
-			    <div class="dayofmonth">23</div>
-			    <div class="dayofweek">Tues</div>
-			    <div class="shortdate text-muted">July</div>
-			  </td>
-			  <td class="agenda-time">
-			    9:30 - 10:00 
-			  </td>
-			  <td class="agenda-events">
-			    <div class="agenda-event">
-                              Coffee and Refreshments
-			    </div>
-			  </td>
-			</tr>
-			<tr>
-			  <td class="agenda-time">
-			    10:00 - 10:05 
-			  </td>
-			  <td class="agenda-events">
-			    <div class="agenda-event">
-                              Welcome
-			    </div>
-			  </td>
-			</tr>
-			<tr>
- 			  <td class="agenda-time">
-			    10:05 - 11:00
-			  </td>
-			  <td class="agenda-events">
-			    <div class="agenda-event">
-			      <strong>Invited Talk</strong> <br />
-			      <a href="http://www.gchockler.com/">Gregory Chockler</a> (Royal Holloway) <br />
-			      Atomic Transaction Commit for Modern Data Stores
-			      (<a href="abstracts.html#chockler">abstract</a>)
-			    </div>
-			  </td>
-			</tr>
-			<tr>
- 			  <td class="agenda-time">
-			    11:00 - 11:30
-			  </td>
-			  <td class="agenda-events">
-			    <div class="agenda-event">
-			      Coffee Break
-			    </div>
-			  </td>
-			</tr>
-			<tr>
- 			  <td class="agenda-time">
-			    11:30 - 12:30
-			  </td>
-			  <td class="agenda-events">
-			    <div class="agenda-event">
-			      Shale Xiong (Imperial College London)<br />
-				Data Consistency in Transactional Storage Systems: A Centralised Approach
-			      (<a href="abstracts.html#xiong">abstract</a>)
-			      <br /><br />
-			      Victor Gomes (University of Cambridge)<br />
-			      A Conflict Free Replicated Tree with Move Operations (short talk)
-			      (<a href="abstracts.html#gomes">abstract</a>)
-			      <br /><br />
+  </div>
+</nav>
+  <div class="jumbotron">
+    <h1 class="display-4">
+      Kent Concurrency Workshop and S-REPLS 15
+    </h1>
+    <div class="lead pt-1">
+      <h2>University of Kent, Canterbury</h2>
+    </div>
+    <div class="lead">
+      <h3>18‐19 July, 2024</h3>
+    </div>
+    <div class="mt-2">
+  </div>
+    <p>
+      This two-day workshop is aimed at bringing together researchers,
+      from the UK and elsewhere, who are working on the theory of concurrency
+      and the semantics and implementation of programming languages.
+    </p>
+    <!--p>
+    <a class="anchor" name="venue">
+  </a>
+    The workshop will be held in
+    <strong>Lecture Theatre L of the LT building</strong>
+      (see Campus Map). Directions to the Stag Hill Campus are available
+      <a href="https://www.surrey.ac.uk/visit-university/how-get-here">
+        here
+      </a>
+      .
+    </p-->
+    <p>
+      <a class="anchor" name="venue">
+    </a>
+      The workshop will be held in
+      <strong>TBA</strong>
+        (see Campus Map). Directions to the Canterbury Campus are available
+        <a href="https://www.kent.ac.uk/locations/canterbury/directions">
+          here
+        </a>
+        .
+      </p>
+        <p>
+          Registration for the event is free. Lunch and tea/coffee will be
+          provided thanks to funding from
+          <a href="https://vetss.org.uk/">
+            VeTSS
+          </a>
+          and
+          <a href="https://www.kent.ac.uk/">
+            the University of Kent Lift Fund
+          </a>
+          .
+        </p>
+        <div class="pt-2">
+          <a class="btn btn-warning" href="https://www.kent.ac.uk/maps/canterbury/canterbury-campus/">
+            Campus Map
+          </a>
+          <!-- <a class="anchor" name="register">
+          <a class="btn btn-success" href="" role="button">
+            Register
+          </a>
+        </a>
+          -->
+          <!---<a class="anchor" name="propose">
+          <a class="btn btn-danger" href="mailto:b.dongol@surrey.ac.uk ?subject=Talk for concurrency workshop/S-REPLS" role="button">
+            Propose talk
+          </a>
+        </a>
+          --->
+          <a class="anchor" name="register">
+            <a class="btn btn-success" href="https://docs.google.com/forms/d/1FplIDgOW3zVjt9dbxWlrC1f4OfRXm20C7ERLJr20qUQ/" role="button">
+              Register
+            </a>
+          </a>
+          <div class="col-xs-12" style="height:20px;">
+        </div>
+        <strong>Registration deadline: 9th July.</strong>
+        <br>
+      </div>
+      </div>
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-sm-6 pt-3">
+              <div class="container-fluid">
+                <h4>
+                  <alert>Schedule (TBA)</alert>
+                </h4>
+                  <hr/>
+                  
+                  <div class="agenda">
+                    <div class="table-responsive">
+                      <table class="table table-condensed table-bordered">
+                        <thead>
+                          <tr>
+                            <th>Date</th>
+                            <th>Time</th>
+                            <th>Event</th>
+                          </tr>
+                        </thead>
+                        <!--tbody>
+                          <tr>
+                            <td class="agenda-date" class="active" rowspan="9">
+                              <div class="dayofmonth">
+                                23
+                              </div>
+                              <div class="dayofweek">
+                                Tues
+                              </div>
+                              <div class="shortdate text-muted">
+                                July
+                              </div>
+                            </td>
+                            <td class="agenda-time">
+                              9:30 - 10:00
+                            </td>
+                            <td class="agenda-events">
+                              <div class="agenda-event">
+                                Coffee and Refreshments
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="agenda-time">
+                              10:00 - 10:05
+                            </td>
+                            <td class="agenda-events">
+                              <div class="agenda-event">
+                                Welcome
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="agenda-time">
+                              10:05 - 11:00
+                            </td>
+                            <td class="agenda-events">
+                              <div class="agenda-event">
+                                <strong>Invited Talk</strong>
+                                <br />
+                                <a href="http://www.gchockler.com/">
+                                  Gregory Chockler
+                                </a>
+                                (Royal Holloway)
+                                <br />
+                                Atomic Transaction Commit for Modern Data Stores
+                                (
+                                <a href="abstracts.html#chockler">
+                                abstract
+                              </a>
+                              )
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="agenda-time">
+                            11:00 - 11:30
+                          </td>
+                          <td class="agenda-events">
+                            <div class="agenda-event">
+                              Coffee Break
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="agenda-time">
+                            11:30 - 12:30
+                          </td>
+                          <td class="agenda-events">
+                            <div class="agenda-event">
+                              Shale Xiong (Imperial College London)
+                              <br />
+                              Data Consistency in Transactional Storage Systems: A Centralised Approach
+                              (
+                              <a href="abstracts.html#xiong">
+                              abstract
+                            </a>
+                            )
+                            <br />
+                            <br />
+                            Victor Gomes (University of Cambridge)<br />
+                            A Conflict Free Replicated Tree with Move Operations (short talk)
+                            (
+                            <a href="abstracts.html#gomes">
+                            abstract
+                          </a>
+                          )
+                          <br />
+                          <br />
 
-			      Jean Pichon-Pharabod (University of Cambridge)<br />
-			      Cerberus-BMC: a Principled Reference Semantics and Exploration Tool for Concurrent and Sequential C (short talk)
-			      (<a href="abstracts.html#pichon">abstract</a>)
+                          Jean Pichon-Pharabod (University of Cambridge)<br />
+                          Cerberus-BMC: a Principled Reference Semantics and Exploration Tool for Concurrent and Sequential C (short talk)
+                          (
+                          <a href="abstracts.html#pichon">
+                          abstract
+                        </a>
+                        )
 
-			    </div>
-			  </td>
-			</tr>
-			<tr>
- 			  <td class="agenda-time">
-			    12:30 - 13:30
-			  </td>
-			  <td class="agenda-events">
-			    <div class="agenda-event">
-			      Lunch
-			    </div>
-			  </td>
-			</tr>
-			<tr>
- 			  <td class="agenda-time">
-			    13:30 - 15:00
-			  </td>
-			  <td class="agenda-events">
-			    <div class="agenda-event">
-			      Jonathan Lawrence (University of Oxford)<br />
-			      Modelling and Verifying Concurrent Data Types using CSP and FDR
-			      (<a href="abstracts.html#lawrence">abstract</a>)
-			      (<a href="slides/slides-jonathan.pdf">slides</a>)
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="agenda-time">
+                      12:30 - 13:30
+                    </td>
+                    <td class="agenda-events">
+                      <div class="agenda-event">
+                        Lunch
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="agenda-time">
+                      13:30 - 15:00
+                    </td>
+                    <td class="agenda-events">
+                      <div class="agenda-event">
+                        Jonathan Lawrence (University of Oxford)
+                        <br />
+                        Modelling and Verifying Concurrent Data Types using CSP and FDR
+                        (
+                        <a href="abstracts.html#lawrence">
+                        abstract
+                      </a>
+                      )
+                      (
+                      <a href="slides/slides-jonathan.pdf">
+                      slides
+                    </a>
+                    )
 
-			      <br /><br />
-				
-			      Ioana Boureanu (University of Surrey)<br />
-			      Symbolic Verification of Epistemic Properties in Programs
-			      (<a href="abstracts.html#boureanu">abstract</a>)
-			      (<a href="slides/slides-ioana.pdf">slides</a>)
-			      <br /><br />
-			      
-			      Emanuele D'Osualdo (Imperial College London)<br />
-			      TaDA Live: Compositional Reasoning for Termination of Fine-grained Concurrent Programs
-			      (<a href="abstracts.html#gardner">abstract</a>)
-			    </div>
-			  </td>
-			</tr>
-			<tr>
- 			  <td class="agenda-time">
-			    15:00 - 15:30
-			  </td>
-			  <td class="agenda-events">
-			    <div class="agenda-event">
-			      Coffee Break
-			    </div>
-			  </td>
-			</tr>
-			
-			<tr>
- 			  <td class="agenda-time">
-			    15:30 - 17:00
-			  </td>
-			  <td class="agenda-events">
-			    <div class="agenda-event">
-			      Gustavo Petri (ARM, Cambridge)<br />
-			      Proving Invariant Safety of Highly Available Distributed Applications
-			      (<a href="abstracts.html#petri">abstract</a>)
-			      (<a href="slides/slides-gustavo.pdf">slides</a>)
-			      <br /><br />
-			      
-			      Conrad Watt and Guillaume Barbier (University of Cambridge)<br/>
-			      Mending JavaScript's Relaxed Memory Model
-			      (<a href="abstracts.html#watt">abstract</a>)
-			      <br/><br/>
-			      Alasdair Armstrong (University of Cambridge)<br>
-				 Axiomatic Concurrency Semantics for Full-Scale ARMv8-A using Sail 
-				(<a href="abstracts.html#armstrong">abstract</a>)
-			      
-			    </div>
-			  </td>
-			</tr>
-                      </tbody>
-		    </table>
-		  </div>
-		</div>
-		<div class="agenda">
-		  <div class="table-responsive">
-		    <table class="table table-condensed table-bordered">
-                      <thead>
-			<tr>
-                          <th>Date</th>
-                          <th>Time</th>
-                          <th>Event</th>
-			</tr>
-                      </thead>
-                      <tbody>
-			<tr>
-			  <td class="agenda-date" class="active" rowspan="8">
-			    <div class="dayofmonth">24</div>
-			    <div class="dayofweek">Wed</div>
-			    <div class="shortdate text-muted">July</div>
-			  </td>
-			  <td class="agenda-time">
-			    9:30 - 10:00 
-			  </td>
-			  <td class="agenda-events">
-			    <div class="agenda-event">
-                              Coffee and Refreshments
-			    </div>
-			  </td>
-			</tr>
-			<tr>
-			  <td class="agenda-time">
-			    10:00 - 11:00 
-			  </td>
-			  <td class="agenda-events">
-			    <div class="agenda-event">
-			      <strong>Invited Talk</strong> <br />
-			      <a href="http://www.dcs.gla.ac.uk/~ornela/">Ornela Dardha</a> (University of Glasgow)<br/>
-			      A New Linear Logic for Deadlock-Free Session-Typed Processes
-			      (<a href="abstracts.html#dardha">abstract</a>)
-			      (<a href="slides/paper-ornela.pdf">paper</a>)
-			    </div>
-			  </td>
-			</tr>
-			<tr>
- 			  <td class="agenda-time">
-			    11:00 - 11:30
-			  </td>
-			  <td class="agenda-events">
-			    <div class="agenda-event">
-			      Coffee Break
-			    </div>
-			  </td>
-			</tr>
-			<tr>
- 			  <td class="agenda-time">
-			    11:30 - 12:30
-			  </td>
-			  <td class="agenda-events">
-			    <div class="agenda-event">
-			      Jeremy Gibbons (University of Oxford)<br/>
-			      What You Needa Know About Yoneda
-			      (<a href="abstracts.html#gibbons">abstract</a>)
-			      (<a href="slides/slides-jeremy.pdf">slides</a>)
-			      <br/><br/>
-			      Alceste Scalas (Aston University)<br/>
-			      Effpi: Verified Message-Passing Programs in Dotty
-			      (<a href="abstracts.html#scalas">abstract</a>)
-			    </div>
-			  </td>
-			</tr>
-			<tr>
- 			  <td class="agenda-time">
-			    12:30 - 13:30
-			  </td>
-			  <td class="agenda-events">
-			    <div class="agenda-event">
-			      Lunch
-			    </div>
-			  </td>
-			</tr>
-			<tr>
- 			  <td class="agenda-time">
-			    13:30 - 15:00
-			  </td>
-			  <td class="agenda-events">
-			    Dominic Orchard (University of Kent)<br/>
-			    Resource-Oriented Programming with Graded Modal Types
-			    (<a href="abstracts.html#liepelt">abstract</a>)
-			    (<a href="slides/slides-dominic.pdf">slides</a>)
-			    (<a href="https://github.com/granule-project/granule">GitHub</a>)
-			    (<a href="https://granule-project.github.io/">project page</a>)
-			    <br/><br/>
-			    
-			    James Noble (Victoria University of Wellington)<br/>
-			    Transient Typechecks are (Almost) Free
-			    (<a href="abstracts.html#noble">abstract</a>)
-			    (<a href="slides/slides-james.pdf">slides</a>)
-			    <br/><br/>
-			    
-			    Francois Dupressoir (University of Surrey)<br/>
-			    EasyCrypt: Applying Program Verification Techniques to Cryptography
-			    (<a href="abstracts.html#dupressoir">abstract</a>)
-			    (<a href="slides/slides-francois.pdf">slides</a>)
-			  </td>
-			</tr>
-			<tr>
- 			  <td class="agenda-time">
-			    15:00 - 15:30
-			  </td>
-			  <td class="agenda-events">
-			    <div class="agenda-event">
-			      Coffee Break
-			    </div>
-			  </td>
-			</tr>
-			
-			<tr>
- 			  <td class="agenda-time">
-			    15:30 - 17:30
-			  </td>
-			  <td class="agenda-events">
-			    <div class="agenda-event">
-			      <p>Marco Paviotti (University of Kent)<br>
-				  First Steps in Denotational Semantics for Weak Memory Concurrency
-				  (<a href="abstracts.html#paviotti">abstract</a>)</p>
-				
-				
-				
-			      <p>Evgenii Moiseenko (JetBrains Research)<br>
-				  Compilation Correctness from Event Structure Based Weak Memory Model
-				  (<a href="abstracts.html#moiseenko">abstract</a>)
-				  (<a href="slides/slides-evgenii.pdf">slides</a>)
-				</p>
-				
-				
-			      <p>Simon Doherty (University of Sheffield)<br>
-				  Local Data-Race Freedom and the C11 Memory Model
-				  (<a href="abstracts.html#doherty">abstract</a>)</p>
+                    <br />
+                    <br />
+                    
+                    Ioana Boureanu (University of Surrey)
+                    <br />
+                    Symbolic Verification of Epistemic Properties in Programs
+                    (
+                    <a href="abstracts.html#boureanu">
+                    abstract
+                  </a>
+                  )
+                  (
+                  <a href="slides/slides-ioana.pdf">
+                  slides
+                </a>
+                )
+                <br />
+                <br />
+                
+                Emanuele D'Osualdo (Imperial College London)
+                <br />
+                TaDA Live: Compositional Reasoning for Termination of Fine-grained Concurrent Programs
+                (
+                <a href="abstracts.html#gardner">
+                abstract
+              </a>
+              )
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="agenda-time">
+            15:00 - 15:30
+          </td>
+          <td class="agenda-events">
+            <div class="agenda-event">
+              Coffee Break
+            </div>
+          </td>
+        </tr>
+          <tr>
+            <td class="agenda-time">
+              15:30 - 17:00
+            </td>
+            <td class="agenda-events">
+              <div class="agenda-event">
+                Gustavo Petri (ARM, Cambridge)
+                <br />
+                Proving Invariant Safety of Highly Available Distributed Applications
+                (
+                <a href="abstracts.html#petri">
+                abstract
+              </a>
+              )
+              (
+              <a href="slides/slides-gustavo.pdf">
+              slides
+            </a>
+            )
+            <br />
+            <br />
+            
+            Conrad Watt and Guillaume Barbier (University of Cambridge)
+            <br/>
+            Mending JavaScript's Relaxed Memory Model
+            (
+            <a href="abstracts.html#watt">
+            abstract
+          </a>
+          )
+          <br/>
+          <br/>
+          Alasdair Armstrong (University of Cambridge)<br>
+          Axiomatic Concurrency Semantics for Full-Scale ARMv8-A using Sail
+          (
+          <a href="abstracts.html#armstrong">
+          abstract
+        </a>
+        )
+      </div>
+    </td>
+  </tr>
+</tbody-->
+</table>
+</div>
+</div>
+<div class="agenda">
+  <div class="table-responsive">
+    <table class="table table-condensed table-bordered">
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Time</th>
+          <th>Event</th>
+        </tr>
+      </thead>
+      <!--tbody>
+        <tr>
+          <td class="agenda-date" class="active" rowspan="8">
+            <div class="dayofmonth">
+              24
+            </div>
+            <div class="dayofweek">
+              Wed
+            </div>
+            <div class="shortdate text-muted">
+              July
+            </div>
+          </td>
+          <td class="agenda-time">
+            9:30 - 10:00
+          </td>
+          <td class="agenda-events">
+            <div class="agenda-event">
+              Coffee and Refreshments
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="agenda-time">
+            10:00 - 11:00
+          </td>
+          <td class="agenda-events">
+            <div class="agenda-event">
+              <strong>Invited Talk</strong>
+              <br />
+              <a href="http://www.dcs.gla.ac.uk/~ornela/">
+                Ornela Dardha
+              </a>
+              (University of Glasgow)
+              <br/>
+              A New Linear Logic for Deadlock-Free Session-Typed Processes
+              (
+              <a href="abstracts.html#dardha">
+              abstract
+            </a>
+            )
+            (
+            <a href="slides/paper-ornela.pdf">
+            paper
+          </a>
+          )
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td class="agenda-time">
+        11:00 - 11:30
+      </td>
+      <td class="agenda-events">
+        <div class="agenda-event">
+          Coffee Break
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td class="agenda-time">
+        11:30 - 12:30
+      </td>
+      <td class="agenda-events">
+        <div class="agenda-event">
+          Jeremy Gibbons (University of Oxford)
+          <br/>
+          What You Needa Know About Yoneda
+          (
+          <a href="abstracts.html#gibbons">
+          abstract
+        </a>
+        )
+        (
+        <a href="slides/slides-jeremy.pdf">
+        slides
+      </a>
+      )
+      <br/>
+      <br/>
+      Alceste Scalas (Aston University)<br/>
+      Effpi: Verified Message-Passing Programs in Dotty
+      (
+      <a href="abstracts.html#scalas">
+      abstract
+    </a>
+    )
+  </div>
+</td>
+</tr>
+<tr>
+  <td class="agenda-time">
+    12:30 - 13:30
+  </td>
+  <td class="agenda-events">
+    <div class="agenda-event">
+      Lunch
+    </div>
+  </td>
+</tr>
+<tr>
+  <td class="agenda-time">
+    13:30 - 15:00
+  </td>
+  <td class="agenda-events">
+    Dominic Orchard (University of Kent)
+    <br/>
+    Resource-Oriented Programming with Graded Modal Types
+    (
+    <a href="abstracts.html#liepelt">
+    abstract
+  </a>
+  )
+  (
+  <a href="slides/slides-dominic.pdf">
+  slides
+</a>
+)
+(
+<a href="https://github.com/granule-project/granule">
+GitHub
+</a>
+)
+(
+<a href="https://granule-project.github.io/">
+project page
+</a>
+)
+<br/>
+<br/>
 
-			      <p>Aquinas Hobor (National University of Singapore)<br>
-				  Mechanized Verification of Graph-Manipulating Programs
-				  (<a href="abstracts.html#hobor">abstract</a>)
-				  (<a href="slides/slides-aquinas.pdf">slides</a>)
-				</p>
-			    </div>
-			  </td>
-			</tr>
-                      </tbody>
-		    </table>
-		  </div>
-		</div>
-	      </div>
-	    </div>
-	<div class="col-sm-6 pt-3 pt-0 pl-3">
-	  <div class="container-fluid">
-	    <h4><a class="anchor" name="announcements"></a>Announcements</h4>
-	    Further announcements about the workshop will be made via the <a href="http://www.jiscmail.ac.uk/CONCURRENCYWG">Concurrency Working
-	      Group</a> and <a href="http://www.jiscmail.ac.uk/srepls">S-REPLS</a> mailing lists. Please subscribe by following those links and
-	    clicking <i>Subscribe or Unsubscribe</i>.
-	  </div>
-	  
-	  <div class="container-fluid pt-4">
-	    <h4><a class="anchor" name="organisation"></a>Organisation</h4>
-	    <!-- <a href="https://brijeshdongol.github.io/">Brijesh Dongol</a> -->
-	    <p> Brijesh Dongol</p>
-	    
-	    <dt>Concurrency Workshop Steering Committee </dt>
-	    <dd> Mark Batty, Mike Dodds, Philippa Gardner, Cliff Jones and Matthew Parkinson </dd>
-	    
-	    <dt> S-REPLS Steering Committee </dt>
-	    <dd>Dominic Mulligan, Ohad Kammar and Jeremy Yallop </dd>
-	  </div>
-	  
-	  <div class="container-fluid pt-4">
-	    <h4><a class="anchor" name="previous"></a>Previous events</h4>
-	    <div class="row pt-2">
-	      <div class="col-sm">
-		<dt>May 2017</dt><dd><a href="http://conferences.au.dk/acw/">Aarhus Concurrency Workshop</a></dd>
-		<dt>Jul 2016</dt><dd><a href="https://www.cs.kent.ac.uk/events/kcw/">Kent Concurrency Workshop</a></dd>
-		<dt>Jul 2015</dt><dd><a href="http://multicore.doc.ic.ac.uk/icw2015/">Imperial Concurrency Workshop</a></dd>
-		<dt>Apr 2014</dt><dd><a href="http://www-users.cs.york.ac.uk/~miked/ycw2014/">York Concurrency Workshop</a></dd>
-		<dt>Jul 2012</dt><dd><a href="http://www.cs.ox.ac.uk/people/hongseok.yang/ccw12/index.html">Oxford Concurrency Workshop</a></dd>
-	      </div>
-	      <div class="col-sm">
-		<dt>Feb 2019</dt><dd><a href="https://sreplsevent2019.splashthat.com/">S-REPLS 11 Facebook</a></dd>
-		<dt>Sep 2018</dt><dd><a href="http://www.dcs.bbk.ac.uk/~carsten/srepls10/">S-REPLS 10 Birkbeck</a></dd>
-		<dt>May 2018</dt><dd><a href="http://users.sussex.ac.uk/~mfb21/srepls9/">S-REPLS 9 Sussex</a></dd>
-		<dt>Jan 2018</dt><dd><a href="https://soft-dev.org/events/srepls8/">S-REPLS 8 King's College</a></dd>
-		<dt>Sep 2017</dt><dd><a href="https://warwick.ac.uk/fac/sci/dcs/events/srepls7/">S-REPLS 7 Warwick</a></dd>
-	      </div>
-	    </div>
-	  </div>
+James Noble (Victoria University of Wellington)
+<br/>
+Transient Typechecks are (Almost) Free
+(
+<a href="abstracts.html#noble">
+abstract
+</a>
+)
+(
+<a href="slides/slides-james.pdf">
+slides
+</a>
+)
+<br/>
+<br/>
 
-	  <div class="container-fluid pt-4">
-	    <h4><a class="anchor" name="accommodation"></a>Accommodation</h4>
-	    <p> Participants may wish to stay in nearby hotels or on <a href="https://www.surrey.ac.uk/accommodation/guest-room">campus</a>.
-	      However, it is also possible to commute from London. Guildford is approx 35 mins by train from London Waterloo, and the University is a 15 min walk from Guildford station.
-	      <br/>
-	      <br/>
-	      Some possible hotel options are below. These are approx a 25-30 min walk to campus. 
-	      <ul>
-		<li> <a href="https://www.angelpostinghouse.com/">The Angel Posting House Hotel</a> </li>
-		<li> <a href="https://www.harbourhotels.co.uk/guildford">Guildford Harbour Hotel</a> </li>
-		<li> <a href="https://www.guildford.com/">The Mandolay Hotel</a> </li>
-	      </ul>
-	      
-	    </p>
-	  </div>
-	  <div class="container-fluid pt-4">
-	    <div class="row">
-	      <div class="col-sm">
-		<img src="SCCS.jpg" alt="SCCS" height=100/> 
-	      </div>
-	      <div class="col-sm">
-		<img src="surreylogo.png" alt="SCCS" height=100/> 
-	      </div>
-	      <div class="col-sm">
-		<img src="VETSS.png" alt="SCCS" height=90> </img>
-	      </div>
-	    </div>
-	  </div>
-	</div>
-	  </div>
-	</div>
-      </body>
-    </html>
+Francois Dupressoir (University of Surrey)
+<br/>
+EasyCrypt: Applying Program Verification Techniques to Cryptography
+(
+<a href="abstracts.html#dupressoir">
+abstract
+</a>
+)
+(
+<a href="slides/slides-francois.pdf">
+slides
+</a>
+)
+</td>
+</tr>
+<tr>
+  <td class="agenda-time">
+    15:00 - 15:30
+  </td>
+  <td class="agenda-events">
+    <div class="agenda-event">
+      Coffee Break
+    </div>
+  </td>
+</tr>
+  <tr>
+    <td class="agenda-time">
+      15:30 - 17:30
+    </td>
+    <td class="agenda-events">
+      <div class="agenda-event">
+        <p>
+          Marco Paviotti (University of Kent)
+          <br>
+          First Steps in Denotational Semantics for Weak Memory Concurrency
+          (
+          <a href="abstracts.html#paviotti">
+          abstract
+        </a>
+        )
+      </p>
+      <p>
+        Evgenii Moiseenko (JetBrains Research)
+        <br>
+        Compilation Correctness from Event Structure Based Weak Memory Model
+        (
+        <a href="abstracts.html#moiseenko">
+        abstract
+      </a>
+      )
+      (
+      <a href="slides/slides-evgenii.pdf">
+      slides
+    </a>
+    )
+  </p>
+    <p>
+      Simon Doherty (University of Sheffield)
+      <br>
+      Local Data-Race Freedom and the C11 Memory Model
+      (
+      <a href="abstracts.html#doherty">
+      abstract
+    </a>
+    )
+  </p>
+
+  <p>
+    Aquinas Hobor (National University of Singapore)
+    <br>
+    Mechanized Verification of Graph-Manipulating Programs
+    (
+    <a href="abstracts.html#hobor">
+    abstract
+  </a>
+  )
+  (
+  <a href="slides/slides-aquinas.pdf">
+  slides
+</a>
+)
+</p>
+</div>
+</td>
+</tr>
+</tbody-->
+</table>
+</div>
+</div>
+</div>
+</div>
+<div class="col-sm-6 pt-3 pt-0 pl-3">
+  <div class="container-fluid">
+    <h4>
+      <a class="anchor" name="announcements">
+    </a>
+      Announcements
+    </h4>
+    Further announcements about the workshop will be made via the
+    <a href="http://www.jiscmail.ac.uk/CONCURRENCYWG">
+    Concurrency Working
+    Group
+  </a>
+  and
+  <a href="http://www.jiscmail.ac.uk/srepls">
+  S-REPLS
+</a>
+mailing lists. Please subscribe by following those links and
+clicking
+<i>
+Subscribe or Unsubscribe
+</i>
+.
+</div>
+  <div class="container-fluid pt-4">
+    <h4>
+      <a class="anchor" name="organisation">
+    </a>
+      Organisation
+    </h4>
+    <!-- <a href="https://brijeshdongol.github.io/">
+      Brijesh Dongol
+    </a>
+    -->
+    <p>Marco Paviotti</p>
+      <dt>Concurrency Workshop Steering Committee </dt>
+      <dd>
+        Mark Batty, Mike Dodds, Philippa Gardner, Cliff Jones and Matthew
+        Parkinson
+      </dd>
+      <dt> S-REPLS Steering Committee </dt>
+      <dd>Dominic Mulligan, Ohad Kammar and Jeremy Yallop </dd>
+    </div>
+      <div class="container-fluid pt-4">
+        <h4>
+          <a class="anchor" name="previous">
+        </a>
+          Previous events
+        </h4>
+        <div class="row pt-2">
+          <div class="col-sm">
+            <dt>May 2017</dt>
+            <dd>
+              <a href="http://conferences.au.dk/acw/">
+                Aarhus Concurrency Workshop
+              </a>
+            </dd>
+            <dt>Jul 2016</dt>
+            <dd>
+              <a href="https://www.cs.kent.ac.uk/events/kcw/">
+                Kent Concurrency Workshop
+              </a>
+            </dd>
+            <dt>Jul 2015</dt>
+            <dd>
+              <a href="http://multicore.doc.ic.ac.uk/icw2015/">
+                Imperial Concurrency Workshop
+              </a>
+            </dd>
+            <dt>Apr 2014</dt>
+            <dd>
+              <a href="http://www-users.cs.york.ac.uk/~miked/ycw2014/">
+                York Concurrency Workshop
+              </a>
+            </dd>
+            <dt>Jul 2012</dt>
+            <dd>
+              <a href="http://www.cs.ox.ac.uk/people/hongseok.yang/ccw12/index.html">
+                Oxford Concurrency Workshop
+              </a>
+            </dd>
+          </div>
+          <div class="col-sm">
+            <dt>Feb 2019</dt>
+            <dd>
+              <a href="https://sreplsevent2019.splashthat.com/">
+                S-REPLS 11 Facebook
+              </a>
+            </dd>
+            <dt>Sep 2018</dt>
+            <dd>
+              <a href="http://www.dcs.bbk.ac.uk/~carsten/srepls10/">
+                S-REPLS 10 Birkbeck
+              </a>
+            </dd>
+            <dt>May 2018</dt>
+            <dd>
+              <a href="http://users.sussex.ac.uk/~mfb21/srepls9/">
+                S-REPLS 9 Sussex
+              </a>
+            </dd>
+            <dt>Jan 2018</dt>
+            <dd>
+              <a href="https://soft-dev.org/events/srepls8/">
+                S-REPLS 8 King's College
+              </a>
+            </dd>
+            <dt>Sep 2017</dt>
+            <dd>
+              <a href="https://warwick.ac.uk/fac/sci/dcs/events/srepls7/">
+                S-REPLS 7 Warwick
+              </a>
+            </dd>
+          </div>
+        </div>
+      </div>
+
+      <div class="container-fluid pt-4">
+        <h4>
+          <a class="anchor" name="accommodation">
+        </a>
+          Accommodation
+        </h4>
+        <p>
+          Participants may wish to stay in nearby hotels or on
+          <a href="https://kenthospitality.kent.ac.uk/KxBnB/">
+          campus
+          </a> (promotion code: <strong>cc24</strong>).
+        However, it is also possible to commute from London. Canterbury is approx
+        56 mins' train journey with Southeastern Highspeed trains from London St Pancras International, and the University is a 35 min walk from Canterbury West Station.
+        <br/>
+        <br/>
+        Some possible hotel options are below. These are approx a 30-45 min walk to campus.
+        <ul>
+          <li>
+            <a href="https://www.abodecanterbury.co.uk/">
+              Abode
+            </a>
+          </li>
+          <li>
+            <a href="https://www.thefalstaffincanterbury.com/">
+              Falstaff
+            </a>
+          </li>
+          <li>
+            <a href="https://www.thesunhotelcanterbury.co.uk/">
+              The Sun Hotel
+            </a>
+          </li>
+        </ul>
+        </p>
+      </div>
+      <div class="container-fluid pt-4">
+        <div class="row">
+          <div class="col-sm">
+            <img src="UniKent_Blue294_rgb.png" alt="SCCS" height=100/>
+            
+          </div>
+          <div class="col-sm">
+            <img src="VETSS.png" alt="SCCS" height=90>
+          </img>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</body>
+</html>
 
 
-		
 
-	  
 		
 
 
