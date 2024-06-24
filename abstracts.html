@@ -207,3 +207,25 @@ This formalisation includes approximately 10K lines of Coq code, which can be
 accessed at: <a href ="https://github.com/ekiciburak/sessionTreeST/tree/itp2024">https://github.com/ekiciburak/sessionTreeST/tree/itp2024</a>.
 </p>
 <br>
+
+<h5 id="marshal">Danielle Marshall:  Non-Linear Communication via Graded Modal Session Types</h5>
+<p>
+Session types provide guarantees about concurrent behaviour and can be
+understood through their correspondence with linear logic, with propositions as
+sessions and proofs as processes. However, a strictly linear setting is somewhat
+limiting since there exist various useful patterns of communication that rely on
+non-linear behaviours. For example, shared channels provide a way to repeatedly
+spawn a process with binary communication along a fresh linear session-typed
+channel. Non-linearity can be introduced in a controlled way in programming
+through the general concept of graded modal types, which are a framework
+encompassing various kinds of coeffect typing (describing how computations make
+demands on their context). This paper shows how graded modal types can be
+leveraged alongside session types to enable various well-known non-linear
+concurrency behaviours to be re-introduced in a precise manner in a type system
+with a linear basis. The ideas here are demonstrated using Granule, a functional
+programming language with linear, indexed, and graded modal types. We then
+define a core calculus capturing the requisite type features and our new graded
+modal session-typed primitives. We give an operational model and establish key
+properties following from the typing.
+</p>
+<br>
