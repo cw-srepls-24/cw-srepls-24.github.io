@@ -76,11 +76,12 @@ Based on joint work with Robert J. Simmons (unaffiliated) and Chris Martens
 
 <h5 id="cock">Jack Liell-Cock: Compositional imprecise probability</h5>
 <p>
-
 Imprecise probability is concerned with uncertainty about which probability distributions to use. It has applications in robust statistics and elsewhere. Imprecise probability can be modelled in various ways, including by convex sets of probability distributions.
 We look at programming language models for imprecise probability. Our desiderata are that we would like our model to support all kinds of composition, categorical and monoidal, in other words, guided by dataflow diagrams. Another equivalent perspective is that we would like a model of synthetic probability in the sense of Markov categories.
 There is already a fairly popular monad-based approach to imprecise probability, but it is not fully compositional because the monad involved is not commutative, which means that we do not have a proper monoidal structure. In this work, we provide a new fully compositional account. The key idea is to name the non-deterministic choices. To manage the renamings and disjointness of names, we use graded monads. We show that the resulting compositional model is maximal. We relate with the earlier monad approach, showing that we obtain tighter bounds on the uncertainty.
-
+<br><br>
+Joint work with Sam Staton.
+<br><br>
 The preprint can also be found <a href="https://arxiv.org/abs/2405.09391">here</a>.
 </p>
 <br>
