@@ -88,19 +88,13 @@ The preprint can also be found <a href="https://arxiv.org/abs/2405.09391">here</
 </p>
 <br>
 
-<h5 id="cock">Ben Simmer:  Abstract hardware catches concrete bugs</h5>
+<h5 id="simmer">Ben Simmer:  Abstract hardware catches concrete bugs</h5>
 <p>
 We present a technique to find bugs from insufficient virtual-memory synchronisation, building a relaxed-memory checker that is based on a general model of Arm-A virtual memory but specialised to the programming discipline used by systems code. This allows us to do runtime checking during conventional testing, catching sequences with insufficient synchronisation without needing to detect the relaxed outcomes directly. We do this for a production hypervisor - Google's pKVM, deployed on Android - capturing its pagetable usage and synchronisation discipline.
 We build a version compiled into pKVM which can run online during Android testing and use this to find multiple synchronisation bugs in pKVM.
 We formalise the abstraction as an executable transition system in Rocq, which can be extracted to run offline from logs obtained from a lightweight instrumentation of pKVM, and give a pen-and-paper proof of its soundness with respect to an underlying Arm-A virtual-memory model.
-<br><br>
-Joint work with Sam Staton.
-<br><br>
-The preprint can also be found <a href="https://arxiv.org/abs/2405.09391">here</a>.
 </p>
 <br>
-
-
 
 
 <h5 id="ohearn">Peter O'Hearn: Program Analysis for the People</h5>
@@ -259,8 +253,8 @@ properties following from the typing.
 </p>
 <br>
 
-<h5 id="jones">Cliff Jones:  TBA</h5>
+<h5 id="jones">Cliff Jones: Invariants || concurrency</h5>
 <p>
-TBA
+Using abstract objects allows formal methods to scale to specifying serious systems. Notations like VDM, Z, (Event-)B and Alloy employ a very similar collection of abstractions. The use of predicates to restrict even these abstract types is extremely important - they might be known as  "data type invariants" or (in language descriptions) "context conditions"; loop invariants should also be remembered. Furthermore, "data reification" (or "refinement") is an invaluable aspect of producing perspicuous design rationales from specifications using DTIs. This is well-known for sequential programs but is even more telling for concurrent software. Recent applications of tackling concurrency using rely/guarantee conditions have identified two additional advantages. If one thinks of DTIs for sequential programs as "meta-pre/post conditions", the advantages of identifying the same implicit role with rely and guarantee conditions is even more effective. Furthermore, current research with Alan Burns (York) on real-time scheduling has provided an example where liveness can be handled with DTIs.
 </p>
 <br>
