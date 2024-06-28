@@ -88,6 +88,20 @@ The preprint can also be found <a href="https://arxiv.org/abs/2405.09391">here</
 </p>
 <br>
 
+<h5 id="cock">Ben Simmer:  Abstract hardware catches concrete bugs</h5>
+<p>
+We present a technique to find bugs from insufficient virtual-memory synchronisation, building a relaxed-memory checker that is based on a general model of Arm-A virtual memory but specialised to the programming discipline used by systems code. This allows us to do runtime checking during conventional testing, catching sequences with insufficient synchronisation without needing to detect the relaxed outcomes directly. We do this for a production hypervisor - Google's pKVM, deployed on Android - capturing its pagetable usage and synchronisation discipline.
+We build a version compiled into pKVM which can run online during Android testing and use this to find multiple synchronisation bugs in pKVM.
+We formalise the abstraction as an executable transition system in Rocq, which can be extracted to run offline from logs obtained from a lightweight instrumentation of pKVM, and give a pen-and-paper proof of its soundness with respect to an underlying Arm-A virtual-memory model.
+<br><br>
+Joint work with Sam Staton.
+<br><br>
+The preprint can also be found <a href="https://arxiv.org/abs/2405.09391">here</a>.
+</p>
+<br>
+
+
+
 
 <h5 id="ohearn">Peter O'Hearn: Program Analysis for the People</h5>
 <p>
