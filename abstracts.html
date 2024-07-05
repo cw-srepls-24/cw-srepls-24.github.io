@@ -1,268 +1,413 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
-<link href="index_files/bootstrap.min.css" rel="stylesheet"> </link>
-<link href="index_files/style.css" rel="stylesheet"> </link>
-<link href="https://fonts.googleapis.com/css?family=Cabin" rel="stylesheet"></link>
-<script src="index_files/jquery.js"></script> 
+<link href="index_files/bootstrap.min.css" rel="stylesheet" />
+<link href="index_files/style.css" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css?family=Cabin" rel="stylesheet" />
+<script src="index_files/jquery.js"></script>
 <script src="index_files/bootstrap.min.js"></script>
 
 <h5 id="wu">Nicolas Wu: Modular Effective Programs</h5>
 <p>
-An effect handler is a programming construct that allows you to define and manage side effects in a modular and controlled manner. They can capture effects such as state, exceptions, nondeterminism and many others. They promote a good separation of concerns and help with the maintainability and reuse of code.
-
-However, there is a catch: not every operation is algebraic, and so the methodology seems limited in its applications. In this talk, we outline recent work on a library for higher-order algebraic effects that lifts these restrictions. This provides an interface for working with monad transformers in a flexible and composable way.
+  An effect handler is a programming construct that allows you to define and
+  manage side effects in a modular and controlled manner. They can capture
+  effects such as state, exceptions, nondeterminism and many others. They
+  promote a good separation of concerns and help with the maintainability and
+  reuse of code. However, there is a catch: not every operation is algebraic,
+  and so the methodology seems limited in its applications. In this talk, we
+  outline recent work on a library for higher-order algebraic effects that lifts
+  these restrictions. This provides an interface for working with monad
+  transformers in a flexible and composable way.
 </p>
-<br>
+<br />
 
-
-<h5 id="sigal">Jesse Sigal: Algebraic effects with parameters and their handlers</h5>
+<h5 id="sigal">
+  Jesse Sigal: Algebraic effects with parameters and their handlers
+</h5>
 <p>
-We present and report about early work-in-progress developing a library
-for algebraic effects and handlers with resumptions structured
-after Kripke possible-world semantics. The resulting abstraction
-can express dynamic allocation effects such as dynamically allocated
-full ground reference cells and handlers that manipulate these
-references as non-dangling references on a heap. We will demonstrate
-our implementation in Brady's dependently-typed Idris 2, and
-describe its future directions and prospects to advanced mutable-
-to-immutable data-structure transformation, dynamically allocated
-thread schedulers, functional-logic programming, and constraint
-solving.
+  We present and report about early work-in-progress developing a library for
+  algebraic effects and handlers with resumptions structured after Kripke
+  possible-world semantics. The resulting abstraction can express dynamic
+  allocation effects such as dynamically allocated full ground reference cells
+  and handlers that manipulate these references as non-dangling references on a
+  heap. We will demonstrate our implementation in Brady's dependently-typed
+  Idris 2, and describe its future directions and prospects to advanced mutable-
+  to-immutable data-structure transformation, dynamically allocated thread
+  schedulers, functional-logic programming, and constraint solving.
 
-<br><br>
-Joint work with:<br>
-  Ohad Kammar (University of Edinburgh)<br>
-  Cristina Matache (University of Edinburgh)<br>
-  Conor McBride (University of Strathclyde)<br>
+  <br /><br />
+  Joint work with:<br />
+  Ohad Kammar (University of Edinburgh)<br />
+  Cristina Matache (University of Edinburgh)<br />
+  Conor McBride (University of Strathclyde)<br />
 </p>
-<br>
+<br />
 
-<h5 id="yang">Zhixuan Yang: A Logical Framework for Locally Cartesian Closed Categories</h5>
+<h5 id="yang">
+  Zhixuan Yang: A Logical Framework for Locally Cartesian Closed Categories
+</h5>
 <p>
-Logical frameworks are type theories for studying type theories. This talk is
-about a logical framework that supports unrestricted higher-order abstract
-syntax and equational axioms. Although similar logical frameworks have already
-been used by several authors, the mathematical details of its categorical
-semantics remain unwritten folklore until recently, which I will sketch in this
-talk.
+  Logical frameworks are type theories for studying type theories. This talk is
+  about a logical framework that supports unrestricted higher-order abstract
+  syntax and equational axioms. Although similar logical frameworks have already
+  been used by several authors, the mathematical details of its categorical
+  semantics remain unwritten folklore until recently, which I will sketch in
+  this talk.
 </p>
-<br>
+<br />
 
-<h5 id="arntzenius">Michael Arntzenius: Semantics for Nondeterministic Logic Programming via Mutually
-Exclusive Choice</h5>
+<h5 id="arntzenius">
+  Michael Arntzenius: Semantics for Nondeterministic Logic Programming via
+  Mutually Exclusive Choice
+</h5>
 <p>
-In many domains it's natural to combine logical constraints with some
-notion of nondeterministic choice. For example, in procedural content
-generation for video games, we may wish a level map - say, a grid of
-tiles, each tile being either sea, shore, plains, or mountains - to be
-randomly generated, within some constraints - say, that sea tiles
-cannot be adjacent to plains or mountains. In this talk I'll present a
-syntax and semantics for "finite-choice logic programming", where
-rules can have multiple, mutually exclusive conclusions. This mutual
-exclusion is modelled by posets: elements of a poset are
-"incompatible" iff they have no upper bound (no way to combine their
-information); a poset is "bounded-complete" iff every compatible
-subset has a least upper bound (a _best_ way to combine their
-information). We can then construct a complete lattice on the
-pairwise-incompatible subsets ("mutually exclusive" subsets) of a
-bounded-complete poset. Our semantics forms a monotone map on this
-lattice, and its least fixed point finds the minimal models of our
-program.
-
-Moreover, although I probably will not have time to explain it in depth, there
-is a direct implementation strategy inspired by this denotational semantics.
-Based on joint work with Robert J. Simmons (unaffiliated) and Chris Martens
-(Northeastern University).
+  In many domains it's natural to combine logical constraints with some notion
+  of nondeterministic choice. For example, in procedural content generation for
+  video games, we may wish a level map - say, a grid of tiles, each tile being
+  either sea, shore, plains, or mountains - to be randomly generated, within
+  some constraints - say, that sea tiles cannot be adjacent to plains or
+  mountains. In this talk I'll present a syntax and semantics for "finite-choice
+  logic programming", where rules can have multiple, mutually exclusive
+  conclusions. This mutual exclusion is modelled by posets: elements of a poset
+  are "incompatible" iff they have no upper bound (no way to combine their
+  information); a poset is "bounded-complete" iff every compatible subset has a
+  least upper bound (a _best_ way to combine their information). We can then
+  construct a complete lattice on the pairwise-incompatible subsets ("mutually
+  exclusive" subsets) of a bounded-complete poset. Our semantics forms a
+  monotone map on this lattice, and its least fixed point finds the minimal
+  models of our program. Moreover, although I probably will not have time to
+  explain it in depth, there is a direct implementation strategy inspired by
+  this denotational semantics. Based on joint work with Robert J. Simmons
+  (unaffiliated) and Chris Martens (Northeastern University).
 </p>
-<br>
+<br />
 
 <h5 id="cock">Jack Liell-Cock: Compositional imprecise probability</h5>
 <p>
-Imprecise probability is concerned with uncertainty about which probability distributions to use. It has applications in robust statistics and elsewhere. Imprecise probability can be modelled in various ways, including by convex sets of probability distributions.
-We look at programming language models for imprecise probability. Our desiderata are that we would like our model to support all kinds of composition, categorical and monoidal, in other words, guided by dataflow diagrams. Another equivalent perspective is that we would like a model of synthetic probability in the sense of Markov categories.
-There is already a fairly popular monad-based approach to imprecise probability, but it is not fully compositional because the monad involved is not commutative, which means that we do not have a proper monoidal structure. In this work, we provide a new fully compositional account. The key idea is to name the non-deterministic choices. To manage the renamings and disjointness of names, we use graded monads. We show that the resulting compositional model is maximal. We relate with the earlier monad approach, showing that we obtain tighter bounds on the uncertainty.
-<br><br>
-Joint work with Sam Staton.
-<br><br>
-The preprint can also be found <a href="https://arxiv.org/abs/2405.09391">here</a>.
+  Imprecise probability is concerned with uncertainty about which probability
+  distributions to use. It has applications in robust statistics and elsewhere.
+  Imprecise probability can be modelled in various ways, including by convex
+  sets of probability distributions. We look at programming language models for
+  imprecise probability. Our desiderata are that we would like our model to
+  support all kinds of composition, categorical and monoidal, in other words,
+  guided by dataflow diagrams. Another equivalent perspective is that we would
+  like a model of synthetic probability in the sense of Markov categories. There
+  is already a fairly popular monad-based approach to imprecise probability, but
+  it is not fully compositional because the monad involved is not commutative,
+  which means that we do not have a proper monoidal structure. In this work, we
+  provide a new fully compositional account. The key idea is to name the
+  non-deterministic choices. To manage the renamings and disjointness of names,
+  we use graded monads. We show that the resulting compositional model is
+  maximal. We relate with the earlier monad approach, showing that we obtain
+  tighter bounds on the uncertainty.
+  <br /><br />
+  Joint work with Sam Staton.
+  <br /><br />
+  The preprint can also be found
+  <a href="https://arxiv.org/abs/2405.09391">here</a>.
 </p>
-<br>
+<br />
 
-<h5 id="simmer">Ben Simmer:  Abstract hardware catches concrete bugs</h5>
+<h5 id="simmer">Ben Simmer: Abstract hardware catches concrete bugs</h5>
 <p>
-We present a technique to find bugs from insufficient virtual-memory synchronisation, building a relaxed-memory checker that is based on a general model of Arm-A virtual memory but specialised to the programming discipline used by systems code. This allows us to do runtime checking during conventional testing, catching sequences with insufficient synchronisation without needing to detect the relaxed outcomes directly. We do this for a production hypervisor - Google's pKVM, deployed on Android - capturing its pagetable usage and synchronisation discipline.
-We build a version compiled into pKVM which can run online during Android testing and use this to find multiple synchronisation bugs in pKVM.
-We formalise the abstraction as an executable transition system in Rocq, which can be extracted to run offline from logs obtained from a lightweight instrumentation of pKVM, and give a pen-and-paper proof of its soundness with respect to an underlying Arm-A virtual-memory model.
+  We present a technique to find bugs from insufficient virtual-memory
+  synchronisation, building a relaxed-memory checker that is based on a general
+  model of Arm-A virtual memory but specialised to the programming discipline
+  used by systems code. This allows us to do runtime checking during
+  conventional testing, catching sequences with insufficient synchronisation
+  without needing to detect the relaxed outcomes directly. We do this for a
+  production hypervisor - Google's pKVM, deployed on Android - capturing its
+  pagetable usage and synchronisation discipline. We build a version compiled
+  into pKVM which can run online during Android testing and use this to find
+  multiple synchronisation bugs in pKVM. We formalise the abstraction as an
+  executable transition system in Rocq, which can be extracted to run offline
+  from logs obtained from a lightweight instrumentation of pKVM, and give a
+  pen-and-paper proof of its soundness with respect to an underlying Arm-A
+  virtual-memory model.
 </p>
-<br>
-<h5 id="vollmer">Tori Vollmer: A Mixed Linear and Graded Logic: Proofs, Terms, and Models</h5>
+<br />
+<h5 id="vollmer">
+  Tori Vollmer: A Mixed Linear and Graded Logic: Proofs, Terms, and Models
+</h5>
 <p>
-Graded modal logics generalise standard modal logics via families of modalities indexed by an algebraic structure whose operations mediate between the different modalities. The graded "of-course" modality ! (bang) captures how many times a proposition is used and has an analogous interpretation to the of-course modality from linear logic; the of-course modality from linear logic can be modelled by a linear exponential comonad and graded of-course can be modelled by a graded linear exponential comonad. Benton showed in his seminal paper on Linear/Non-Linear logic that the of-course modality can be split into two modalities connecting intuitionistic logic with linear logic, forming a symmetric monoidal adjunction. Later, Fujii et al. demonstrated that every graded comonad can be decomposed into an adjunction and a 'strict action'. We give a similar result to Benton, leveraging Fujii et al.'s decomposition, showing that graded modalities can be split into two modalities connecting a graded logic with a graded linear logic. We propose a sequent calculus, its proof theory and categorical model, and a natural deduction system which we show is isomorphic to the sequent calculus. Interestingly, our system can also be understood as Linear/Non-Linear logic composed with an action that adds the grading, further illuminating the shared principles between linear logic and a class of graded modal logics.
-<br><br>
-    Joint work with Danielle Marshall, Harley Eades III, and Dominic Orchard.
+  Graded modal logics generalise standard modal logics via families of
+  modalities indexed by an algebraic structure whose operations mediate between
+  the different modalities. The graded "of-course" modality ! (bang) captures
+  how many times a proposition is used and has an analogous interpretation to
+  the of-course modality from linear logic; the of-course modality from linear
+  logic can be modelled by a linear exponential comonad and graded of-course can
+  be modelled by a graded linear exponential comonad. Benton showed in his
+  seminal paper on Linear/Non-Linear logic that the of-course modality can be
+  split into two modalities connecting intuitionistic logic with linear logic,
+  forming a symmetric monoidal adjunction. Later, Fujii et al. demonstrated that
+  every graded comonad can be decomposed into an adjunction and a 'strict
+  action'. We give a similar result to Benton, leveraging Fujii et al.'s
+  decomposition, showing that graded modalities can be split into two modalities
+  connecting a graded logic with a graded linear logic. We propose a sequent
+  calculus, its proof theory and categorical model, and a natural deduction
+  system which we show is isomorphic to the sequent calculus. Interestingly, our
+  system can also be understood as Linear/Non-Linear logic composed with an
+  action that adds the grading, further illuminating the shared principles
+  between linear logic and a class of graded modal logics.
+  <br /><br />
+  Joint work with Danielle Marshall, Harley Eades III, and Dominic Orchard.
 </p>
-<br>
-
-
+<br />
 
 <h5 id="ohearn">Peter O'Hearn: Program Analysis for the People</h5>
 <p>
-After many years happily working on research in mathematical logic and static
-analysis.  in 2013 I moved to Facebook to try to apply some of the ideas in the
-real world.  Eventually the techniques succeeded and led to thousands of bugs
-fixed before code at FB reached production, and the tools were used by other big
-tech companies including Microsoft and Amazon. But this was only after  the
-initial shock of a complete failure in deploying program analysis in the way I
-was I had learned to do in academia. Overall,  I received many intellectual
-gifts from  going back and forth between the theory and the needs of people who
-use the tools . The experience made me revisit my own assumptions, leading to
-surprising (for me) places. In the talk I’d like to tell you what I learned
-about logic and program analysis, and how it made a difference, as well as what
-I wish I knew and why there is much to do.
+  After many years happily working on research in mathematical logic and static
+  analysis. in 2013 I moved to Facebook to try to apply some of the ideas in the
+  real world. Eventually the techniques succeeded and led to thousands of bugs
+  fixed before code at FB reached production, and the tools were used by other
+  big tech companies including Microsoft and Amazon. But this was only after the
+  initial shock of a complete failure in deploying program analysis in the way I
+  was I had learned to do in academia. Overall, I received many intellectual
+  gifts from going back and forth between the theory and the needs of people who
+  use the tools . The experience made me revisit my own assumptions, leading to
+  surprising (for me) places. In the talk I’d like to tell you what I learned
+  about logic and program analysis, and how it made a difference, as well as
+  what I wish I knew and why there is much to do.
 </p>
-<br>
+<br />
 <h5 id="watt">Conrad Watt: Limitations of Concurrency on the Web</h5>
 <p>
-Compared to native platforms, the Web platform severely restricts the use of
-shared memory concurrency. For example: relaxed atomics are not supported,
-function pointers cannot be shared between threads, and certain synchronization
-primitives have limitations placed on their use.  Only two programming languages
-are permitted to run on the Web platform: JavaScript, a source-level scripting
-language; and WebAssembly, a bytecode-level compilation target. When a
-programmer directly writes JavaScript code, the Web platform's concurrency
-restrictions are immediately visible through limitations on the expressivity of
-available APIs related to threads and shared memory. In contrast, when a source
-language such as C++ or Rust is compiled to WebAssembly, the source language's
-concurrency features typically do not respect these limitations, and so the
-compilation process may fail in surprising ways, or silently insert onerous
-workarounds. This talk will recount the historical and technical background
-which has given rise to the Web platform's limitations on concurrency, highlight
-some of the more interesting workarounds involved in WebAssembly compilation,
-and sketch ongoing work in the Web standards community towards expanding the
-concurrency capabilities of the Web platform.
+  Compared to native platforms, the Web platform severely restricts the use of
+  shared memory concurrency. For example: relaxed atomics are not supported,
+  function pointers cannot be shared between threads, and certain
+  synchronization primitives have limitations placed on their use. Only two
+  programming languages are permitted to run on the Web platform: JavaScript, a
+  source-level scripting language; and WebAssembly, a bytecode-level compilation
+  target. When a programmer directly writes JavaScript code, the Web platform's
+  concurrency restrictions are immediately visible through limitations on the
+  expressivity of available APIs related to threads and shared memory. In
+  contrast, when a source language such as C++ or Rust is compiled to
+  WebAssembly, the source language's concurrency features typically do not
+  respect these limitations, and so the compilation process may fail in
+  surprising ways, or silently insert onerous workarounds. This talk will
+  recount the historical and technical background which has given rise to the
+  Web platform's limitations on concurrency, highlight some of the more
+  interesting workarounds involved in WebAssembly compilation, and sketch
+  ongoing work in the Web standards community towards expanding the concurrency
+  capabilities of the Web platform.
 </p>
-<br>
+<br />
 
-
-<h5 id="geeson">Luke Geeson: Mix Testing: Specifying and Testing ABI Compatibility Of C/C++ Atomics Implementations</h5>
+<h5 id="geeson">
+  Luke Geeson: Mix Testing: Specifying and Testing ABI Compatibility Of C/C++
+  Atomics Implementations
+</h5>
 <p>
-The correctness of complex software depends on both the correctness of the
-source code, and the compilers that generate corresponding binary code.
-Compilers must do more than preserve the semantics of a single source file: they
-must ensure that generated binaries can be composed with other binaries to form
-a final executable. The compatibility of composition is ensured using an
-Application Binary Interface (ABI), which specifies details of calling
-conventions, exception handling, and so on. Unfortunately, there are no official
-ABIs for concurrent programs, and different atomics mappings, although correct
-in isolation, may induce bugs when composed. Indeed, mixing binaries generated
-by today’s compilers can lead to erroneous binaries.  We present mix testing: a
-new technique designed to find compiler bugs when the components of a C/C++ test
-are separately-compiled for multiple compatible architectures and then mixed
-together. We define a class of compiler bugs, coined mixing bugs, that arise
-when parts of a program are compiled separately using different mappings from
-C/C++ atomic operations to assembly sequences. To demonstrate the generality of
-mix testing, we have designed and implemented tool, atomic-mixer, which we have
-used: (a) to reproduce existing non-mixing bugs that state-of-the-art
-concurrency testing tools are limited to being able to find (showing that
-atomic-mixer at least meets the capabilities of these tools), and (b) to find
-four previously-unknown mixing bugs in LLVM and GCC, and one prospective mixing
-bug in mappings proposed for the Java Virtual Machine. Lastly, we have worked
-with engineers at Arm to specify, for the first time, an atomics ABI for Armv8,
-and have used atomic-mixer to validate the LLVM and GCC compilers against it.
+  The correctness of complex software depends on both the correctness of the
+  source code, and the compilers that generate corresponding binary code.
+  Compilers must do more than preserve the semantics of a single source file:
+  they must ensure that generated binaries can be composed with other binaries
+  to form a final executable. The compatibility of composition is ensured using
+  an Application Binary Interface (ABI), which specifies details of calling
+  conventions, exception handling, and so on. Unfortunately, there are no
+  official ABIs for concurrent programs, and different atomics mappings,
+  although correct in isolation, may induce bugs when composed. Indeed, mixing
+  binaries generated by today’s compilers can lead to erroneous binaries. We
+  present mix testing: a new technique designed to find compiler bugs when the
+  components of a C/C++ test are separately-compiled for multiple compatible
+  architectures and then mixed together. We define a class of compiler bugs,
+  coined mixing bugs, that arise when parts of a program are compiled separately
+  using different mappings from C/C++ atomic operations to assembly sequences.
+  To demonstrate the generality of mix testing, we have designed and implemented
+  tool, atomic-mixer, which we have used: (a) to reproduce existing non-mixing
+  bugs that state-of-the-art concurrency testing tools are limited to being able
+  to find (showing that atomic-mixer at least meets the capabilities of these
+  tools), and (b) to find four previously-unknown mixing bugs in LLVM and GCC,
+  and one prospective mixing bug in mappings proposed for the Java Virtual
+  Machine. Lastly, we have worked with engineers at Arm to specify, for the
+  first time, an atomics ABI for Armv8, and have used atomic-mixer to validate
+  the LLVM and GCC compilers against it.
 </p>
-<br>
+<br />
 
-
-<h5 id="hou">Ping Hou: Fearless Asynchronous Communications with Timed Multiparty Session Protocols</h5>
+<h5 id="hou">
+  Ping Hou: Fearless Asynchronous Communications with Timed Multiparty Session
+  Protocols
+</h5>
 <p>
-Session types using affinity and exception handling mechanisms have been
-developed to ensure the communication safety of protocols implemented in
-concurrent and distributed programming languages. Nevertheless, current affine
-session types are inadequate for specifying real-world asynchronous protocols,
-as they are usually imposed by time constraints which enable timeout exceptions
-to prevent indefinite blocking while awaiting valid messages. This paper
-proposes the first formal integration of affinity, time constraints, timeouts,
-and time-failure handling based on multiparty session types for supporting
-reliability in asynchronous distributed systems. With this theory, we statically
-guarantee that asynchronous timed communication is deadlock-free, communication
-safe, and will never be hindered by timeout errors or abrupt terminations.
-
-To implement our theory, we introduce Anon, a Rust toolchain designed to
-facilitate the implementation of safe affine timed protocols. Anon leverages
-generic types and the time library to handle timed communications, integrated
-with optional types for affinity. We evaluate our approach by extending diverse
-examples from the literature to incorporate time and timeouts, demonstrating
-that our solution incurs negligible overhead compared with an untimed
-implementation. We also showcase the correctness by construction of our approach
-by implementing various real-world use cases, including a remote data protocol
-from the Internet of Remote Things domain, and protocols from real-time systems
-like keyless car entry, Android motion sensors, and smartwatches.
+  Session types using affinity and exception handling mechanisms have been
+  developed to ensure the communication safety of protocols implemented in
+  concurrent and distributed programming languages. Nevertheless, current affine
+  session types are inadequate for specifying real-world asynchronous protocols,
+  as they are usually imposed by time constraints which enable timeout
+  exceptions to prevent indefinite blocking while awaiting valid messages. This
+  paper proposes the first formal integration of affinity, time constraints,
+  timeouts, and time-failure handling based on multiparty session types for
+  supporting reliability in asynchronous distributed systems. With this theory,
+  we statically guarantee that asynchronous timed communication is
+  deadlock-free, communication safe, and will never be hindered by timeout
+  errors or abrupt terminations. To implement our theory, we introduce Anon, a
+  Rust toolchain designed to facilitate the implementation of safe affine timed
+  protocols. Anon leverages generic types and the time library to handle timed
+  communications, integrated with optional types for affinity. We evaluate our
+  approach by extending diverse examples from the literature to incorporate time
+  and timeouts, demonstrating that our solution incurs negligible overhead
+  compared with an untimed implementation. We also showcase the correctness by
+  construction of our approach by implementing various real-world use cases,
+  including a remote data protocol from the Internet of Remote Things domain,
+  and protocols from real-time systems like keyless car entry, Android motion
+  sensors, and smartwatches.
 </p>
-<br>
+<br />
 
-<h5 id="aksenov">Vitaly Aksenov: Semi-automatic efficient granularity control</h5>
+<h5 id="aksenov">
+  Vitaly Aksenov: Semi-automatic efficient granularity control
+</h5>
 <p>
-Abstract: Over the past decade, many programming languages and systems for
-parallel-computing have been developed, e.g., Fork/Join and Habanero Java,
-Parallel Haskell, Parallel ML, and X10. Although these systems raise the level
-of abstraction for writing parallel codes, performance continues to require
-labor-intensive optimizations for coarsening the granularity of parallel
-executions. In this paper, we present provably and practically efficient
-techniques for controlling granularity within the run-time system of the
-language. Our starting point is "oracle-guided scheduling", a result from the
-functional-programming community that shows that granularity can be controlled
-by an "oracle" that can predict the execution time of parallel codes. We give an
-algorithm for implementing such an oracle and prove that it has the desired
-theoretical properties under the nested-parallel programming model. We implement
-the oracle in C++ by extending Cilk and evaluate its practical performance. The
-results show that our techniques can essentially eliminate hand tuning while
-closely matching the performance of hand tuned codes.
+  Abstract: Over the past decade, many programming languages and systems for
+  parallel-computing have been developed, e.g., Fork/Join and Habanero Java,
+  Parallel Haskell, Parallel ML, and X10. Although these systems raise the level
+  of abstraction for writing parallel codes, performance continues to require
+  labor-intensive optimizations for coarsening the granularity of parallel
+  executions. In this paper, we present provably and practically efficient
+  techniques for controlling granularity within the run-time system of the
+  language. Our starting point is "oracle-guided scheduling", a result from the
+  functional-programming community that shows that granularity can be controlled
+  by an "oracle" that can predict the execution time of parallel codes. We give
+  an algorithm for implementing such an oracle and prove that it has the desired
+  theoretical properties under the nested-parallel programming model. We
+  implement the oracle in C++ by extending Cilk and evaluate its practical
+  performance. The results show that our techniques can essentially eliminate
+  hand tuning while closely matching the performance of hand tuned codes.
 </p>
-<br>
+<br />
 
-
-<h5 id="ekici">Burak Ekici: Completeness of Asynchronous Session Tree Subtyping in Coq</h5>
+<h5 id="ekici">
+  Burak Ekici: Completeness of Asynchronous Session Tree Subtyping in Coq
+</h5>
 <p>
-In this talk, we present the first formalisation of asynchronous subtyping in
-multiparty session types (MPST) within the Coq proof assistant.  Our method
-involves transforming session types into session trees that exclude branching
-and selection, and then establishing a coinductive refinement  relation over
-these trees to govern action reordering and subtyping. We demonstrate the
-effectiveness of our formalisation by verifying example subtyping  schemas from
-the literature. Furthermore, we re-implement the inductive negation of the
-refinement relation from a previous work by Ghilezan et al.,  reducing the
-number of rules from eighteen to eight, and prove the completeness of subtyping
-with respect to its negation in Coq.
-
-This formalisation includes approximately 10K lines of Coq code, which can be
-accessed at: <a href ="https://github.com/ekiciburak/sessionTreeST/tree/itp2024">https://github.com/ekiciburak/sessionTreeST/tree/itp2024</a>.
+  In this talk, we present the first formalisation of asynchronous subtyping in
+  multiparty session types (MPST) within the Coq proof assistant. Our method
+  involves transforming session types into session trees that exclude branching
+  and selection, and then establishing a coinductive refinement relation over
+  these trees to govern action reordering and subtyping. We demonstrate the
+  effectiveness of our formalisation by verifying example subtyping schemas from
+  the literature. Furthermore, we re-implement the inductive negation of the
+  refinement relation from a previous work by Ghilezan et al., reducing the
+  number of rules from eighteen to eight, and prove the completeness of
+  subtyping with respect to its negation in Coq. This formalisation includes
+  approximately 10K lines of Coq code, which can be accessed at:
+  <a href="https://github.com/ekiciburak/sessionTreeST/tree/itp2024"
+    >https://github.com/ekiciburak/sessionTreeST/tree/itp2024</a
+  >.
 </p>
-<br>
+<br />
 
-<h5 id="marshall">Danielle Marshall:  Non-Linear Communication via Graded Modal Session Types</h5>
+<h5 id="marshall">
+  Danielle Marshall: Non-Linear Communication via Graded Modal Session Types
+</h5>
 <p>
-Session types provide guarantees about concurrent behaviour and can be
-understood through their correspondence with linear logic, with propositions as
-sessions and proofs as processes. However, a strictly linear setting is somewhat
-limiting since there exist various useful patterns of communication that rely on
-non-linear behaviours. For example, shared channels provide a way to repeatedly
-spawn a process with binary communication along a fresh linear session-typed
-channel. Non-linearity can be introduced in a controlled way in programming
-through the general concept of graded modal types, which are a framework
-encompassing various kinds of coeffect typing (describing how computations make
-demands on their context). This paper shows how graded modal types can be
-leveraged alongside session types to enable various well-known non-linear
-concurrency behaviours to be re-introduced in a precise manner in a type system
-with a linear basis. The ideas here are demonstrated using Granule, a functional
-programming language with linear, indexed, and graded modal types. We then
-define a core calculus capturing the requisite type features and our new graded
-modal session-typed primitives. We give an operational model and establish key
-properties following from the typing.
+  Session types provide guarantees about concurrent behaviour and can be
+  understood through their correspondence with linear logic, with propositions
+  as sessions and proofs as processes. However, a strictly linear setting is
+  somewhat limiting since there exist various useful patterns of communication
+  that rely on non-linear behaviours. For example, shared channels provide a way
+  to repeatedly spawn a process with binary communication along a fresh linear
+  session-typed channel. Non-linearity can be introduced in a controlled way in
+  programming through the general concept of graded modal types, which are a
+  framework encompassing various kinds of coeffect typing (describing how
+  computations make demands on their context). This paper shows how graded modal
+  types can be leveraged alongside session types to enable various well-known
+  non-linear concurrency behaviours to be re-introduced in a precise manner in a
+  type system with a linear basis. The ideas here are demonstrated using
+  Granule, a functional programming language with linear, indexed, and graded
+  modal types. We then define a core calculus capturing the requisite type
+  features and our new graded modal session-typed primitives. We give an
+  operational model and establish key properties following from the typing.
 </p>
-<br>
+<br />
 
-<h5 id="jones">Cliff Jones:  Invariants || concurrency</h5>
+<h5 id="jones">Cliff Jones: Invariants || concurrency</h5>
 <p>
-Using abstract objects allows formal methods to scale to specifying serious systems. Notations like VDM, Z, (Event-)B and Alloy employ a very similar collection of abstractions. The use of predicates to restrict even these abstract types is extremely important - they might be known as  "data type invariants" or (in language descriptions) "context conditions"; loop invariants should also be remembered. Furthermore, "data reification" (or "refinement") is an invaluable aspect of producing perspicuous design rationales from specifications using DTIs. This is well-known for sequential programs but is even more telling for concurrent software. Recent applications of tackling concurrency using rely/guarantee conditions have identified two additional advantages. If one thinks of DTIs for sequential programs as "meta-pre/post conditions", the advantages of identifying the same implicit role with rely and guarantee conditions is even more effective. Furthermore, current research with Alan Burns (York) on real-time scheduling has provided an example where liveness can be handled with DTIs.
+  Using abstract objects allows formal methods to scale to specifying serious
+  systems. Notations like VDM, Z, (Event-)B and Alloy employ a very similar
+  collection of abstractions. The use of predicates to restrict even these
+  abstract types is extremely important - they might be known as "data type
+  invariants" or (in language descriptions) "context conditions"; loop
+  invariants should also be remembered. Furthermore, "data reification" (or
+  "refinement") is an invaluable aspect of producing perspicuous design
+  rationales from specifications using DTIs. This is well-known for sequential
+  programs but is even more telling for concurrent software. Recent applications
+  of tackling concurrency using rely/guarantee conditions have identified two
+  additional advantages. If one thinks of DTIs for sequential programs as
+  "meta-pre/post conditions", the advantages of identifying the same implicit
+  role with rely and guarantee conditions is even more effective. Furthermore,
+  current research with Alan Burns (York) on real-time scheduling has provided
+  an example where liveness can be handled with DTIs.
 </p>
-<br>
+<br />
+
+<h5 id="ambal">Guillaume Ambal: Semantics of Remote Direct Memory Access</h5>
+<p>
+  Remote direct memory access (RDMA) is a modern technology enabling networked
+  machines to exchange information without involving the operating system of
+  either side, and thus significantly speeding up data transfer in computer
+  clusters. While RDMA is extensively used in practice and studied in various
+  research papers, a formal underlying model specifying the allowed behaviours
+  of concurrent RDMA programs running in modern multicore architectures is still
+  missing. This paper aims to close this gap and provide semantic foundations of
+  RDMA on x86-TSO machines. We propose three equivalent formal models, two
+  operational models in different levels of abstraction and one declarative
+  model, and prove that the three characterisations are equivalent. To gain
+  confidence in the proposed semantics, the more concrete operational model has
+  been reviewed by NVIDIA experts, a major vendor of RDMA systems, and we have
+  empirically validated the declarative formalisation on various subtle litmus
+  tests by extensive testing. We believe that this work is a necessary initial
+  step for formally addressing RDMA-based systems by proposing language-level
+  models, verifying their mapping to hardware, and developing reasoning
+  techniques for concurrent RDMA programs
+</p>
+<br />
+
+<h5 id="griffin">
+  Matt Griffin: IsaBIL: A Framework for Verifying (In)correctness of Binaries
+</h5>
+<p>
+  IsaBIL is a binary analysis framework in Isabelle/HOL that is based on the
+  widely used Binary Analysis Platform (BAP). Specifically, in IsaBIL, we
+  formalise BAP’s intermediate language, called BIL and integrate it with Hoare
+  logic (to enable proofs of correctness) as well as O’Hearn’s logic (to enable
+  proofs of incorrectness). IsaBIL inherits the full flexibility of BAP,
+  allowing us to verify binaries for a wide range of languages (C, C++, Rust),
+  toolchains (LLVM, Ghidra) and target architectures (x86, RISC-V), and can also
+  be used when the source code for a binary is unavailable. The IsaBIL framework
+  makes extensive use of Isabelle locales, providing a modular and extendable
+  framework for binary analysis. To make verification tractable, we develop a
+  number of big-step rules that combine BIL’s existing small-step rules at
+  different levels of abstraction to support reuse. We develop high- level
+  reasoning rules for RISC-V instructions (our main target architecture) to
+  further optimise verification. Additionally, we develop Isabelle proof tactics
+  that exploit common patterns in C binaries for RISC-V to discharge large
+  numbers of proof goals (often in the 100s) automatically. IsaBIL includes an
+  Isabelle/ML based parser for BIL programs, allowing one to automatically
+  generate the associated Isabelle/HOL program locale from a BAP output. Taken
+  together, IsaBIL provides a highly flexible user-friendly proof environment
+  for program binaries. As examples, we prove correctness of key examples from
+  the Joint Strike Fighter coding standards, and the cURL project.
+</p>
+<br />
+
+<h5 id="freund">Teodoro Freund: CPS or Direct Style? Why not both?</h5>
+<p>
+  The `async/await` idiom for asynchronous functions is already common practice
+  for many modern languages. Although implementation approaches differ from
+  language to language, they all need to solve two problems, the `async` bit
+  (how can I compile a function in such a way that it can suspend), and the
+  `await` bit (how can I chain two `async` functions together, and have one wait
+  on the other). A good and common solution for the `async` problem is to
+  transform a function into a state machine, where every state corresponds to a
+  specific suspension point. Different languages have different strategies for
+  the `await` part, Rust uses a direct style approach, polling the awaitee.
+  Kotlin uses a CPS approach, passing the awaitng `async` function as the
+  continuation of the awaitee. Neither of these is perfect, and there are
+  tradeoffs to consider when choosing one over the other. In this talk we ask
+  the question of how we could combine these two approaches, passing a
+  continuation in certain scenarios and switching to direct style in others.
+  We'll show some very early results, and consider how and when this decision
+  can and should be made.
+</p>
+<br />
